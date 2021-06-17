@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+    db:
+        container_name: db_blog
+        image: postgres:9.6
+        networks:
+            - dev_api
+        environment:
+            - POSTGRES_PASSWORD=passwd
+            - POSTGRES_DB=blog
+        volumes:
+            - dev_postgresql:/var/lib/postgresql
+            - dev_postgresql_data:/var/lib/postgresql/data
+        ports: 
+            - 5434:5432    
+
+networks:
+    dev_api:
+
+volumes:
+    dev_postgresql:
+    dev_postgresql_data:
