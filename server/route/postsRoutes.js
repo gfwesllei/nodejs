@@ -10,10 +10,14 @@ router.get('/posts/:id',async function(req,resp){
 
 })
 router.post('/posts',async function(req,resp){
-
+    const post =req.body;
+    const newPost = await postService.savePost(post)
+    resp.json(newPost)
 })
 router.put('/posts/:id',async function(req,resp){
-
+    const post =req.body;
+    await postService.updatePost(req.params.id,post)
+    resp.end()
 })
 router.delete('/posts/:id',async function(req,resp){
 
