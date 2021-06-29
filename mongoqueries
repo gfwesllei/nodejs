@@ -1,0 +1,6 @@
+mongo "mongodb://root:root:27017/testdb?tls=true"
+
+mongo --host localhost --port 27017 -u root -p root
+
+
+
